@@ -10,19 +10,27 @@
   </head>
   <body class="app-body">
     <header class="header">
-      <div>
-        <img class="icon" src="favicon.svg" alt="app icon" />
+      <img class="icon" src="favicon.svg" alt="app icon" />
+
+      <div class="character-selection">
+        <select name="status" id="status">
+          <option value="fullCast">All characters</option>
+          <option value="alive" class="alive">Alive</option>
+          <option value="dead" class="dead">Dead</option>
+          <option value="unknown" class="unknown">Unknown</option>
+        </select>
+        <input
+          id="name-input"
+          name="name-input"
+          type="text"
+          placeholder="Type character name"
+        />
       </div>
-      <div class="header-element">
-        <button>Dropdown</button>
-        <button>Filter by name</button>
-      </div>
-      <div>
-        <button class="fullContentBtn">Load characters</button>
-      </div>
+
+      <button class="showContentBtn">Show characters</button>
     </header>
     <main class="content">
-      <div id="app"></div>
+      <!--<div id="app"></div> -->
     </main>
     <footer class="footer">
       <p>Made with ☀️ by Adriana</p>
