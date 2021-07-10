@@ -5,12 +5,12 @@
 .app-body {
   display: grid;
   height: 100vh;
-  grid-template-rows: 10vh auto 10vh;
+  grid-template-rows: 11vh auto 10vh;
 }
 
 .header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0.8rem;
   border-bottom: 1px solid blue;
 }
@@ -42,4 +42,37 @@
 
 .characterCard {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.character-selection {
+  gap: 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.character-name {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.character-pic {
+  border-bottom: 2px solid #4e4c4c;
+}
+
+.showContentBtn {
+  width: 80px;
+}
+
+/*.dropdown-livingStatus {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}*/
+
+.dropdown-options a {
+  display: block;
+  text-decoration: none;
+  color: blue;
 }
