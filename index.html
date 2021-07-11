@@ -13,8 +13,8 @@
       <img class="icon" src="favicon.svg" alt="app icon" />
 
       <div class="character-selection">
-        <select name="status" id="status">
-          <option value="fullCast">All characters</option>
+        <select name="status" id="status" class="character-selection__element">
+          <option value="fullCast" class="fullCast">All status</option>
           <option value="alive" class="alive">Alive</option>
           <option value="dead" class="dead">Dead</option>
           <option value="unknown" class="unknown">Unknown</option>
@@ -22,16 +22,16 @@
         <input
           id="name-input"
           name="name-input"
+          class="character-selection__element"
           type="text"
-          placeholder="Type character name"
+          placeholder="Type in a character name"
+          onfocus="this.value=''"
         />
       </div>
 
       <button class="showContentBtn">Show characters</button>
     </header>
-    <main class="content">
-      <!--<div id="app"></div> -->
-    </main>
+    <main class="content"></main>
     <footer class="footer">
       <p>Made with ☀️ by Adriana</p>
     </footer>
