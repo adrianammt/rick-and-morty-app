@@ -2,12 +2,12 @@ const fullCastbutton = document.querySelector(".showContentBtn");
 
 const main = document.querySelector(".content");
 
+const statusSelector = document.querySelector("#status");
+
 fullCastbutton.addEventListener("click", () => {
   main.textContent = "";
 
   //This part focuses on the select tag content
-
-  const statusSelector = document.querySelector("#status");
   const status = statusSelector.value;
   console.log(status);
 
@@ -42,8 +42,15 @@ fullCastbutton.addEventListener("click", () => {
   //This is th function that creates the card structure
   function createCard(character) {
     const characterSection = document.createElement("section");
-    characterSection.classList.add("characterCard");
-
+    if (status === "fullCast") {
+      characterSection.classList.add("characterCard");
+    } else if (status === "alive") {
+      characterSection.classList.add("characterCard", "alive-bg");
+    } else if (status === "dead") {
+      characterSection.classList.add("characterCard", "dead-bg");
+    } else {
+      characterSection.classList.add("characterCard", "unknown-bg");
+    }
     const characterName = document.createElement("h2");
     characterName.textContent = character.name;
     characterName.classList.add("character-name");
@@ -59,37 +66,3 @@ fullCastbutton.addEventListener("click", () => {
     return characterSection;
   }
 });
-
-//For the Status Selector Dropdown
-
-/*statusSelectorAlive.addEventListener("change", () => {
-  const url = `https://rickandmortyapi.com/api/character/?status=alive`;
-
-  fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((aliveCast) => {
-      console.log(aliveCast);
-      aliveCast.results.forEach((character) => {
-        main.append(createCard(character));
-      });
-    });
-
-  function createCard(character) {
-    const characterSection = document.createElement("section");
-    characterSection.classList.add("characterCard");
-
-    const characterName = document.createElement("h2");
-    characterName.textContent = character.name;
-
-    const characterPic = document.createElement("img");
-    characterPic.src = character.image;
-    characterPic.alt = characterName;
-
-    characterSection.append(characterPic);
-    characterSection.append(characterName);
-
-    return characterSection;
-  }
-});*/

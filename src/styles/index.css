@@ -61,6 +61,18 @@
   border-bottom: 2px solid #4e4c4c;
 }
 
+.alive-bg {
+  background-color: #478847;
+}
+
+.dead-bg {
+  background-color: black;
+  color: #f7f4f4;
+}
+.unknown-bg {
+  background-color: #ecc47a;
+}
+
 .showContentBtn {
   width: 80px;
 }
