@@ -10,3 +10,36 @@ html {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
+
+.app-body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 11vh auto 10vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  background-color: var(--structure-bg-color1);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: var(--structure-bg-color2);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--structure-bg-color1);
+  color: var(--structure-bg-color2);
+}
