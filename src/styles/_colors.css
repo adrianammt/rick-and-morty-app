@@ -1,3 +1,10 @@
 :root {
-  /* Define your variable colors here */
+  --structure-bg-color1: #4c4cbe;
+  --structure-bg-color2: #ececdc;
+  --button-bg-color: #e9b951;
+  --button-active-bg-color: #e9a251;
+  --card-allStatus-bg-color: #eeebeb;
+  --card-alive-bg-color: #478847;
+  --card-dead-bg-color: black;
+  --card-unknown-bg-color: #ecc47a;
 }
