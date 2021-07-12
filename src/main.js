@@ -75,11 +75,9 @@ fullCastbutton.addEventListener("click", () => {
   //This is the function that creates the card structure
   function createCard(character) {
     const characterSection = document.createElement("section");
-    if (status === "fullCast") {
-      characterSection.classList.add("characterCard");
-    } else if (status === "alive") {
+    if (character.status === "Alive") {
       characterSection.classList.add("characterCard", "alive-bg");
-    } else if (status === "dead") {
+    } else if (character.status === "Dead") {
       characterSection.classList.add("characterCard", "dead-bg");
     } else {
       characterSection.classList.add("characterCard", "unknown-bg");
