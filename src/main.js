@@ -4,15 +4,19 @@ const main = document.querySelector(".content");
 
 const statusSelector = document.querySelector("#status");
 
+const nameFilter = document.querySelector("#name-input");
+
 fullCastbutton.addEventListener("click", () => {
   main.textContent = "";
 
-  //This part focuses on the select tag content
+  const name = nameFilter.value;
+  console.log(name);
+
   const status = statusSelector.value;
   console.log(status);
 
   if (status === "fullCast") {
-    const url = `https://rickandmortyapi.com/api/character`;
+    const url = `https://rickandmortyapi.com/api/character/?name=` + name;
 
     fetch(url)
       .then((response) => {
@@ -24,8 +28,37 @@ fullCastbutton.addEventListener("click", () => {
           main.append(createCard(character));
         });
       });
+  } else if (status === "alive") {
+    const url =
+      `https://rickandmortyapi.com/api/character/?status=alive&name=` + name;
+
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((cast) => {
+        console.log(cast);
+        cast.results.forEach((character) => {
+          main.append(createCard(character));
+        });
+      });
+  } else if (status === "dead") {
+    const url =
+      `https://rickandmortyapi.com/api/character/?status=dead&name=` + name;
+
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((cast) => {
+        console.log(cast);
+        cast.results.forEach((character) => {
+          main.append(createCard(character));
+        });
+      });
   } else {
-    const url = `https://rickandmortyapi.com/api/character/?status=` + status;
+    const url =
+      `https://rickandmortyapi.com/api/character/?status=unknown&name=` + name;
 
     fetch(url)
       .then((response) => {
@@ -39,7 +72,7 @@ fullCastbutton.addEventListener("click", () => {
       });
   }
 
-  //This is th function that creates the card structure
+  //This is the function that creates the card structure
   function createCard(character) {
     const characterSection = document.createElement("section");
     if (status === "fullCast") {
